@@ -6,3 +6,4 @@ This is a sandbox repository I use to play with Haskell.
 
 * Sets
 * Maps
+* Seqs
