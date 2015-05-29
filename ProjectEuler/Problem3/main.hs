@@ -1,16 +1,7 @@
-isPrime potentialFactor testedNumber
-    | potentialFactor > (testedNumber `div` 2) = True
-    | testedNumber `mod` potentialFactor == 0 = False
-    | otherwise = isPrime (potentialFactor + 1) testedNumber
-
-findLargestPrimeFactor currentlyTestedNumber ofNumber
-    | currentlyTestedNumber > (ofNumber `div` 2) = 1
-    | ofNumber `mod` currentlyTestedNumber == 0 && isPrime 2 (ofNumber `div` currentlyTestedNumber) = ofNumber `div` currentlyTestedNumber
-    | otherwise = findLargestPrimeFactor (currentlyTestedNumber + 2) ofNumber
-
-solve forNumber
-    | forNumber `mod` 2 == 0 = findLargestPrimeFactor 2 forNumber
-    | otherwise = findLargestPrimeFactor 3 forNumber
+solve forNumber withPotentialFactor
+    | forNumber == withPotentialFactor = withPotentialFactor
+    | forNumber `mod` withPotentialFactor == 0 = solve (forNumber `div` withPotentialFactor) 2
+    | otherwise = solve forNumber (withPotentialFactor + 1)
 
 main = do
-    print (solve 600851475143)
+    print (solve 600851475143 2)
