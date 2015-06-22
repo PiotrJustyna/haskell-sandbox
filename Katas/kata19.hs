@@ -13,4 +13,4 @@ solve startWord endWord dictionary =
        newDictionary = filter (\x -> x /= (head startWord)) dictionary
 
 main = do
-    putStr $ show (solve ["cat"] "dog" ["cog", "dog", "mat", "cot", "cub", "cab", "bog", "meat", "bat", "beat", "bot"])
+    putStr $ show $ head $ sortBy (\x y -> if snd x > snd y then GT else LT) (solve ["cat"] "dog" ["cog", "dog", "mat", "cot", "cub", "cab", "bog", "meat", "bat", "beat", "bot"])
