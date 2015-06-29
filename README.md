@@ -6,7 +6,9 @@ This is a sandbox repository I use to play with Haskell.
 
 * Folds (foldl, foldl1, foldr, foldr1)
 * Functions (application and composition)
-* Functors (one type parameter in the type constructor)
+* Functors
+  * one type parameter in the type constructor
+  * functor laws
 * Maps
 * Scans (scanl, scanl1, scanr, scanr1)
 * Seqs
