@@ -18,15 +18,43 @@ instance Applicative MysteriousBox where
 
 testFunctorLaw1 = (fmap id $ IncredibleWealth 100) == (id $ IncredibleWealth 100)
 
-testFunctorLaw2 = (fmap (add1 . multiplyBy2) $ IncredibleWealth 100) == fmap add1 (fmap multiplyBy2 $ IncredibleWealth 100)
+testFunctorLaw2 = (fmap (add1 . (multiplyBy2)) $ IncredibleWealth 100) == fmap add1 (fmap multiplyBy2 $ IncredibleWealth 100)
     where
-        multiplyBy2 = (\y -> y * 2)
-        add1 = (\x -> x + 1)
+        multiplyBy2 = (*2)
+        add1 = (+1)
+
+-- identity
+-- pure id <*> v = v
+testApplicativeFunctorLaw1 = (IncredibleWealth id <*> v) == v
+    where
+        v = IncredibleWealth 100
+
+-- composition
+-- pure (.) <*> u <*> v <*> w = u <*> (v <*> w)
+testApplicativeFunctorLaw2 = (IncredibleWealth (.) <*> u <*> v <*> w) == (u <*> (v <*> w))
+    where
+        u = IncredibleWealth (+1)
+        v = IncredibleWealth (*2)
+        w = IncredibleWealth 2
+
+-- homomorphism
+-- pure f <*> pure x = pure (f x)
+testApplicativeFunctorLaw3 = (IncredibleWealth f <*> IncredibleWealth x) == IncredibleWealth (f x)
+    where
+        f = (+2)
+        x = 3
+
+-- interchange
+-- u <*> pure y = pure ($ y) <*> u
+testApplicativeFunctorLaw4 = (u <*> pure y) == (pure ($ y) <*> u)
+    where
+        u = IncredibleWealth (*3)
+        y = 2
 
 main = do
-    print $ testFunctorLaw1
-    print $ testFunctorLaw2
-    print $ (IncredibleWealth (\x -> negate x)) <*> IncredibleWealth 3
-
--- I used to associate MysteriousBox only with a repository of values.
--- Now I think of it as of a repository of values or functions.
+    print $ "Functor Law 1 Test: " ++ show testFunctorLaw1
+    print $ "Functor Law 2 Test: " ++ show testFunctorLaw2
+    print $ "Applicative Functor Law 1 Test (identity): " ++ show testApplicativeFunctorLaw1
+    print $ "Applicative Functor Law 2 Test (composition): " ++ show testApplicativeFunctorLaw2
+    print $ "Applicative Functor Law 3 Test (homomorphism): " ++ show testApplicativeFunctorLaw3
+    print $ "Applicative Functor Law 4 Test (interchange): " ++ show testApplicativeFunctorLaw4
