@@ -10,6 +10,7 @@ This is a sandbox repository I use to play with Haskell.
   * one type parameter in the type constructor
   * functor laws
   * applicative functors
+  * applicative laws
 * Maps
 * Scans (scanl, scanl1, scanr, scanr1)
 * Seqs
