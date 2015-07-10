@@ -13,6 +13,7 @@ This is a sandbox repository I use to play with Haskell.
   * applicative laws
 * Maps
 * Monoids
+  * monoid laws 
 * Scans (scanl, scanl1, scanr, scanr1)
 * Seqs
 * Sets
