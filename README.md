@@ -12,10 +12,12 @@ This is a sandbox repository I use to play with Haskell.
   * applicative functors
   * applicative laws
 * Maps
+* Monads
+  * monad laws
 * Monoids
-  * monoid laws 
+  * monoid laws
 * Scans (scanl, scanl1, scanr, scanr1)
 * Seqs
 * Sets
-* Solutions to [ProjectEuler](https://projecteuler.net/archives)'s problems (7 first solutions so far).
-* Solutions to [CodeKata](http://codekata.com)'s katas (1 very naive solution so far).
+* Solutions to [ProjectEuler](https://projecteuler.net/archives)'s problems (7 first solutions so far)
+* Solutions to [CodeKata](http://codekata.com)'s katas (1 very naive solution so far)
