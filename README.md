@@ -26,3 +26,5 @@ This is a sandbox repository I use to play with Haskell.
  * Exercise 1.9
  * Exercise 1.10
  * Exercise 1.11
+ * Exercise 1.12
+ * Exercise 1.13
