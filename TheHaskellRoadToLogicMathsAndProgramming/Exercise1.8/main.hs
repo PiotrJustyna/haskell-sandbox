@@ -1,7 +1,7 @@
-findMaximum :: [Integer] -> Integer
-findMaximum [] = error "Collection is empty."
-findMaximum [x] = x
-findMaximum (x:xs) = min x (findMaximum xs)
+findMinimum :: [Integer] -> Integer
+findMinimum [] = error "Collection is empty."
+findMinimum [x] = x
+findMinimum (x:xs) = min x (findMinimum xs)
 
 main = do
-    print $ findMaximum [1,2,32, 5, 17, 2]
+    print $ findMinimum [1,2,32, 5, 17, 2]
