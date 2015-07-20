@@ -34,3 +34,4 @@ This is a sandbox repository I use to play with Haskell.
  * Exercise 1.17
  * Exercise 1.18
  * Exercise 1.19
+ * Exercise 1.20
