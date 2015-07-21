@@ -22,7 +22,7 @@ prime0 potentialPrime
     | otherwise = leastNaturalDivisor potentialPrime == potentialPrime
 
 primes :: [Integer]
-primes = filter prime0 [2..10] -- changed the range to be finite
+primes = filter prime0 [2..1000000] -- changed the range to be finite
 
 main = do
     print $ primes
