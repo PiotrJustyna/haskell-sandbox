@@ -4,6 +4,8 @@ This is a sandbox repository I use to play with Haskell.
 
 ### What can I find here? ###
 
+* External libraries in action:
+ * [Rasterific](https://hackage.haskell.org/package/Rasterific)
 * Folds (foldl, foldl1, foldr, foldr1)
 * Functions (application and composition)
 * Functors
