@@ -1,0 +1,10 @@
+divides 5 (Integer -> Bool):
+
+function is partially applied (second parameter missing),
+so instead of returning a Bool, it returns a function which converts
+Integers into Bools
+
+divides 5 7 (Bool):
+
+function is fully applied (both parameters present),
+so it just returns a Bool
