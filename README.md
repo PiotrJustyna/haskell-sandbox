@@ -24,6 +24,7 @@ This is a sandbox repository I use to play with Haskell.
 * Solutions to [ProjectEuler](https://projecteuler.net/archives)'s problems (7 first solutions so far)
 * Solutions to [CodeKata](http://codekata.com)'s katas (1 very naive solution so far)
 * Solutions to [The Haskell Road to Logic, Maths and Programming](http://homepages.cwi.nl/~jve/HR/) exercises:
+ * Exercise 1.7
  * Exercise 1.8
  * Exercise 1.9
  * Exercise 1.10
