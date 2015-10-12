@@ -51,6 +51,11 @@ testApplicativeFunctorLaw4 = (u <*> pure y) == (pure ($ y) <*> u)
         u = IncredibleWealth (*3)
         y = 2
 
+-- sample use of the sequential application operation
+-- prints "IncredibleWealth 50"
+sampleSequentialApplication :: MysteriousBox Int
+sampleSequentialApplication = IncredibleWealth (*10) <*> pure 5
+
 main = do
     print $ "Functor Law 1 Test: " ++ show testFunctorLaw1
     print $ "Functor Law 2 Test: " ++ show testFunctorLaw2
@@ -58,3 +63,4 @@ main = do
     print $ "Applicative Functor Law 2 Test (composition): " ++ show testApplicativeFunctorLaw2
     print $ "Applicative Functor Law 3 Test (homomorphism): " ++ show testApplicativeFunctorLaw3
     print $ "Applicative Functor Law 4 Test (interchange): " ++ show testApplicativeFunctorLaw4
+    print $ "Example of sequential application (<*>): " ++ show sampleSequentialApplication
