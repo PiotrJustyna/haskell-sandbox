@@ -22,7 +22,10 @@ This is a sandbox repository I use to play with Haskell.
 * Seqs
 * Sets
 * Solutions to [ProjectEuler](https://projecteuler.net/archives)'s problems (7 first solutions so far)
-* Solutions to [CodeKata](http://codekata.com)'s katas (1 very naive solution so far)
+* Solutions to [CodeKata](http://codekata.com)'s katas:
+ * [Kata 19](http://codekata.com/kata/kata19-word-chains/) (very naive solution)
+* Solutions to random katas:
+ * Diamond Kata
 * Solutions to [The Haskell Road to Logic, Maths and Programming](http://homepages.cwi.nl/~jve/HR/) exercises:
  * Exercise 1.7
  * Exercise 1.8
