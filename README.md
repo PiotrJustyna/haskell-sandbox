@@ -21,7 +21,7 @@ This is a sandbox repository I use to play with Haskell.
 * Scans (scanl, scanl1, scanr, scanr1)
 * Seqs
 * Sets
-* Solutions to [ProjectEuler](https://projecteuler.net/archives)'s problems (10 first solutions so far)
+* Solutions to [ProjectEuler](https://projecteuler.net/archives)'s problems (11 first solutions so far)
 * Solutions to [CodeKata](http://codekata.com)'s katas:
  * [Kata 19](http://codekata.com/kata/kata19-word-chains/) (very naive solution)
 * Solutions to random katas:
