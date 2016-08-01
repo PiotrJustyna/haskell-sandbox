@@ -1,6 +1,17 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module Lib
-    ( someFunc
+    ( simpleGet
     ) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+import qualified Data.ByteString.Lazy.Char8 as L8
+import           Network.HTTP.Simple
+
+simpleGet :: IO ()
+simpleGet = do
+    response <- httpLBS "http://httpbin.org/get"
+    putStrLn $ "status code: " ++ show (getResponseStatusCode response)
+    putStrLn "header: "
+    print $ getResponseHeader "Content-Type" response
+    putStrLn "body: "
+    L8.putStrLn $ getResponseBody response
