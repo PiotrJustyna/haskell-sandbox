@@ -7,6 +7,7 @@ This is a sandbox repository I use to play with Haskell.
 * External libraries in action:
  * [Rasterific](https://hackage.haskell.org/package/Rasterific)
  * [QuickCheck](https://hackage.haskell.org/package/QuickCheck)
+ * [HTTP](https://github.com/commercialhaskell/jump/blob/master/doc/http-client.md)
 * Folds (foldl, foldl1, foldr, foldr1)
 * Functions (application and composition)
 * Functors
