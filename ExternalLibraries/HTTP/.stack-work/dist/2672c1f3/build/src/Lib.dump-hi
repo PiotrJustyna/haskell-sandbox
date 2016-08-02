@@ -1,17 +1,19 @@
 
 ==================== FINAL INTERFACE ====================
-2016-08-01 20:33:38.6248416 UTC
+2016-08-02 21:09:25.437003 UTC
 
-interface HTTP_9NyspanZVc49OaRmXXSz67:Lib 7103
-  interface hash: 14da18b7dc6b4f3f2cba8cd6a2c73728
-  ABI hash: cb7356293ba517e08bd2098660cfd180
-  export-list hash: cf151ef5df7656b2e29f2cb7b733cbbe
+interface HTTP_JaPUpLeAyCAE1eMLwMeTAy:Lib 7103
+  interface hash: 1fa6ef85e3b8f102df111b5c9f426ec6
+  ABI hash: febe56ef655380c6c896efb5f741e23e
+  export-list hash: 78af7b460daa838ad4db4ab8635b8cf2
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: b3cd57dfc4233d515e872b4f846ccb16
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Lib.postRequest
+  Lib.receiveJson
   Lib.simpleGet
 module dependencies:
 package dependencies: Win32-2.3.1.0@Win32_ELFLzTRksT8Dql3wobiWvb
@@ -38,6 +40,7 @@ package dependencies: Win32-2.3.1.0@Win32_ELFLzTRksT8Dql3wobiWvb
                       data-default-class-0.0.1@datad_K91y8NcZUJI9yaBI61rgdD
                       deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
                       dlist-0.7.1.2@dlist_AO7XAasbAeyL0XLKeq1Aui
+                      enclosed-exceptions-1.0.2@enclo_Ds65i2w7C3698oLVfspeJr
                       exceptions-0.8.3@excep_BEih2K3eMGTE4cg5iulra8
                       fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G ghc-prim-0.4.0.0
                       hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I
@@ -74,6 +77,7 @@ package dependencies: Win32-2.3.1.0@Win32_ELFLzTRksT8Dql3wobiWvb
                       x509-system-1.6.3@x509s_59MddEOh5ZpLoYbedIxOsV
                       x509-store-1.6.1@x509s_GNxlcya66ls6UYCVFocOcd
                       x509-validation-1.6.3@x509v_7k61JS7ZMPn2UX1RCdkXnr
+                      yaml-0.8.18.1@yaml_EwEnZoOYNHvHFnvbxlVdKu
                       zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu
 orphans: aeson-0.11.2.0@aeson_LedJglFIdMA4kUkRtSt8iO:Data.Aeson.Types.Generic
          aeson-0.11.2.0@aeson_LedJglFIdMA4kUkRtSt8iO:Data.Aeson.Types.Instances
@@ -126,19 +130,288 @@ family instance modules: attoparsec-0.13.0.2@attop_F2JR8EcnzjH8eSBi5YocsE:Data.A
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
                          zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.Zlib.Stream
+import  -/  aeson-0.11.2.0@aeson_LedJglFIdMA4kUkRtSt8iO:Data.Aeson 9298cbf89bd480df4ff2e9e72b7f0191
+import  -/  aeson-0.11.2.0@aeson_LedJglFIdMA4kUkRtSt8iO:Data.Aeson.Types.Internal e75b2148bbe26dd75e510d3afffcbbf9
 import  -/  base-4.8.2.0:GHC.Base a4939789b2cfd60b36ed163e56a623cd
 import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  base-4.8.2.0:System.IO 638c10c4fd4901a0aca5b77c9f14123d
+import  -/  bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Char8 0e05dff95094adf61a7e5b18e5656265
 import  -/  bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6:Data.ByteString.Lazy.Char8 099d686cd3f519cc95024254963c6549
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  http-client-0.4.31@httpc_8xDY6RzcsSCCvAWxzdmSgl:Network.HTTP.Client.Request 4432362fb34fd303d623f03d4d7751a1
 import  -/  http-conduit-2.1.11@httpc_BAOSGXmG28B7dlvnRFTZn6:Network.HTTP.Simple cdcc22246bee4beb98896a3700bd014b
-3ed880d0aa979313d3153a94b7215604
+import  -/  yaml-0.8.18.1@yaml_EwEnZoOYNHvHFnvbxlVdKu:Data.Yaml 79c799b249f52fd37b98a3e39577f95c
+a0093ffabdc548b6f5b0f70fb296de07
+  postRequest :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.postRequest1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+fe8fb5121a10e1cb9fda123fbd2ca031
+  postRequest1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case (Network.HTTP.Client.Request.parseRequest
+                         @ GHC.Types.IO
+                         Control.Monad.Catch.$fMonadThrowIO
+                         Lib.postRequest5)
+                        `cast`
+                      (GHC.Types.NTCo:IO[0] <Network.HTTP.Client.Types.Request>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case (Network.HTTP.Simple.httpJSONEither
+                         @ GHC.Types.IO
+                         @ Data.Aeson.Types.Internal.Value
+                         Control.Monad.IO.Class.$fMonadIOIO
+                         Data.Aeson.Types.Instances.$fFromJSONValue_$cparseJSON
+                           `cast`
+                         (Sym (Data.Aeson.Types.Class.NTCo:FromJSON[0]
+                                   <Data.Aeson.Types.Internal.Value>_N))
+                         ipv1)
+                        `cast`
+                      (GHC.Types.NTCo:IO[0]
+                           <Network.HTTP.Client.Types.Response
+                              (Data.Either.Either
+                                 Network.HTTP.Simple.JSONException
+                                 Data.Aeson.Types.Internal.Value)>_R)
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case ipv3 of ww { Network.HTTP.Client.Types.Response ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 case ww4 of wild {
+                   Data.Either.Left x
+                   -> case GHC.Prim.raiseIO#
+                             @ GHC.Exception.SomeException
+                             @ Data.Aeson.Types.Internal.Value
+                             (Network.HTTP.Simple.$fExceptionJSONException_$ctoException x)
+                             ipv2
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                      of {}
+                   Data.Either.Right y
+                   -> case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             (GHC.CString.unpackAppendCString#
+                                "status code: "#
+                                (case ww1 of wild1 { Network.HTTP.Types.Status.Status ds7 ds8 ->
+                                 case ds7 of ww7 { GHC.Types.I# ww8 ->
+                                 case GHC.Show.$wshowSignedInt
+                                        0
+                                        ww8
+                                        (GHC.Types.[] @ GHC.Types.Char) of ww9 { (#,#) ww10 ww11 ->
+                                 GHC.Types.: @ GHC.Types.Char ww10 ww11 } } }))
+                             GHC.Types.True
+                             ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Lib.postRequest4
+                             GHC.Types.True
+                             ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             (GHC.Show.showList__
+                                @ Data.ByteString.Internal.ByteString
+                                Data.ByteString.Internal.$fShowByteString1
+                                (Network.HTTP.Simple.$wgetResponseHeader
+                                   @ Data.Aeson.Types.Internal.Value
+                                   Lib.postRequest3
+                                   ww3)
+                                (GHC.Types.[] @ GHC.Types.Char))
+                             GHC.Types.True
+                             ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Lib.postRequest2
+                             GHC.Types.True
+                             ipv8 of ds6 { (#,#) ipv10 ipv11 ->
+                      case Data.Yaml.encode
+                             @ Data.Aeson.Types.Internal.Value
+                             Data.Aeson.Types.Instances.$fToJSONValue
+                             y of ww7 { Data.ByteString.Internal.PS ww8 ww9 ww10 ww11 ->
+                      Data.ByteString.Char8.$wa2
+                        GHC.IO.Handle.FD.stdout
+                        ww8
+                        ww9
+                        ww10
+                        ww11
+                        ipv10 } } } } } } } } }) -}
+4ab61bc58f29fc2b5059df0deddcdf67
+  postRequest2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "body:"#) -}
+692bf3c2bfc7d16e15e28546e74c2b64
+  postRequest3 :: Network.HTTP.Types.Header.HeaderName
+  {- Unfolding: (case GHC.Prim.newMutVar#
+                        @ GHC.ForeignPtr.Finalizers
+                        @ GHC.Prim.RealWorld
+                        GHC.ForeignPtr.NoFinalizers
+                        GHC.Prim.realWorld# of ds1 { (#,#) ipv ipv1 ->
+                 let {
+                   addr# :: GHC.Prim.Addr# = "Content-Type"#
+                 } in
+                 case {__pkg_ccall bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6 strlen GHC.Prim.Addr#
+                                                                                           -> GHC.Prim.State#
+                                                                                                GHC.Prim.RealWorld
+                                                                                           -> (# GHC.Prim.State#
+                                                                                                   GHC.Prim.RealWorld,
+                                                                                                 GHC.Prim.Word# #)}
+                        addr#
+                        ipv of wild { (#,#) ds3 ds4 ->
+                 let {
+                   a1 :: GHC.ForeignPtr.ForeignPtrContents
+                   = GHC.ForeignPtr.PlainForeignPtr ipv1
+                 } in
+                 let {
+                   ipv2 :: GHC.Prim.Int# = GHC.Prim.word2Int# ds4
+                 } in
+                 case Data.CaseInsensitive.Internal.$wfoldCaseBS
+                        addr#
+                        a1
+                        0
+                        ipv2 of dt1 { Data.ByteString.Internal.PS ipv3 ipv4 ipv5 ipv6 ->
+                 Data.CaseInsensitive.Internal.CI
+                   @ Data.ByteString.Internal.ByteString
+                   (Data.ByteString.Internal.PS addr# a1 0 ipv2)
+                   dt1 } } }) -}
+ccebac2dc4496e8685821bf53aa43fbf
+  postRequest4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "header:"#) -}
+17ad99b4e2f249d1906639aee6276759
+  postRequest5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "POST http://httpbin.org/post"#) -}
+4e72270a0b51957d7a30d189ed070ea9
+  receiveJson :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.receiveJson1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+da04ae1ed4dfae70e4c69d50ab34a32f
+  receiveJson1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ s :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case (Network.HTTP.Simple.httpJSONEither
+                         @ GHC.Types.IO
+                         @ Data.Aeson.Types.Internal.Value
+                         Control.Monad.IO.Class.$fMonadIOIO
+                         Data.Aeson.Types.Instances.$fFromJSONValue_$cparseJSON
+                           `cast`
+                         (Sym (Data.Aeson.Types.Class.NTCo:FromJSON[0]
+                                   <Data.Aeson.Types.Internal.Value>_N))
+                         Lib.receiveJson3)
+                        `cast`
+                      (GHC.Types.NTCo:IO[0]
+                           <Network.HTTP.Client.Types.Response
+                              (Data.Either.Either
+                                 Network.HTTP.Simple.JSONException
+                                 Data.Aeson.Types.Internal.Value)>_R)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of ww { Network.HTTP.Client.Types.Response ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 case ww4 of wild {
+                   Data.Either.Left x
+                   -> case GHC.Prim.raiseIO#
+                             @ GHC.Exception.SomeException
+                             @ Data.Aeson.Types.Internal.Value
+                             (Network.HTTP.Simple.$fExceptionJSONException_$ctoException x)
+                             ipv
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                      of {}
+                   Data.Either.Right y
+                   -> case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             (GHC.CString.unpackAppendCString#
+                                "status code: "#
+                                (case ww1 of wild1 { Network.HTTP.Types.Status.Status ds7 ds8 ->
+                                 case ds7 of ww7 { GHC.Types.I# ww8 ->
+                                 case GHC.Show.$wshowSignedInt
+                                        0
+                                        ww8
+                                        (GHC.Types.[] @ GHC.Types.Char) of ww9 { (#,#) ww10 ww11 ->
+                                 GHC.Types.: @ GHC.Types.Char ww10 ww11 } } }))
+                             GHC.Types.True
+                             ipv of ds2 { (#,#) ipv2 ipv3 ->
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Lib.postRequest4
+                             GHC.Types.True
+                             ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             (GHC.Show.showList__
+                                @ Data.ByteString.Internal.ByteString
+                                Data.ByteString.Internal.$fShowByteString1
+                                (Network.HTTP.Simple.$wgetResponseHeader
+                                   @ Data.Aeson.Types.Internal.Value
+                                   Lib.receiveJson2
+                                   ww3)
+                                (GHC.Types.[] @ GHC.Types.Char))
+                             GHC.Types.True
+                             ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                      case GHC.IO.Handle.Text.hPutStr2
+                             GHC.IO.Handle.FD.stdout
+                             Lib.postRequest2
+                             GHC.Types.True
+                             ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                      case Data.Yaml.encode
+                             @ Data.Aeson.Types.Internal.Value
+                             Data.Aeson.Types.Instances.$fToJSONValue
+                             y of ww7 { Data.ByteString.Internal.PS ww8 ww9 ww10 ww11 ->
+                      Data.ByteString.Char8.$wa2
+                        GHC.IO.Handle.FD.stdout
+                        ww8
+                        ww9
+                        ww10
+                        ww11
+                        ipv8 } } } } } } } }) -}
+7b54c1dfe139cbbbaf0e9d80e89d26b7
+  receiveJson2 :: Network.HTTP.Types.Header.HeaderName
+  {- Unfolding: (case GHC.Prim.newMutVar#
+                        @ GHC.ForeignPtr.Finalizers
+                        @ GHC.Prim.RealWorld
+                        GHC.ForeignPtr.NoFinalizers
+                        GHC.Prim.realWorld# of ds1 { (#,#) ipv ipv1 ->
+                 let {
+                   addr# :: GHC.Prim.Addr# = "Content-Type"#
+                 } in
+                 case {__pkg_ccall bytestring-0.10.6.0@bytes_6VWy06pWzJq9evDvK2d4w6 strlen GHC.Prim.Addr#
+                                                                                           -> GHC.Prim.State#
+                                                                                                GHC.Prim.RealWorld
+                                                                                           -> (# GHC.Prim.State#
+                                                                                                   GHC.Prim.RealWorld,
+                                                                                                 GHC.Prim.Word# #)}
+                        addr#
+                        ipv of wild { (#,#) ds3 ds4 ->
+                 let {
+                   a1 :: GHC.ForeignPtr.ForeignPtrContents
+                   = GHC.ForeignPtr.PlainForeignPtr ipv1
+                 } in
+                 let {
+                   ipv2 :: GHC.Prim.Int# = GHC.Prim.word2Int# ds4
+                 } in
+                 case Data.CaseInsensitive.Internal.$wfoldCaseBS
+                        addr#
+                        a1
+                        0
+                        ipv2 of dt1 { Data.ByteString.Internal.PS ipv3 ipv4 ipv5 ipv6 ->
+                 Data.CaseInsensitive.Internal.CI
+                   @ Data.ByteString.Internal.ByteString
+                   (Data.ByteString.Internal.PS addr# a1 0 ipv2)
+                   dt1 } } }) -}
+72f306d753ac0aef2db284bbb9cddd0d
+  receiveJson3 :: Network.HTTP.Client.Types.Request
+  {- Unfolding: (case Network.HTTP.Client.Request.$fIsStringRequest_$sparseUrlThrow
+                        Lib.receiveJson4 of wild {
+                   Data.Either.Left e
+                   -> Network.HTTP.Client.Request.$fIsStringRequest1 e
+                   Data.Either.Right r -> r }) -}
+c9babec32f0d9e6c08953b026eb7bf72
+  receiveJson4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "http://httpbin.org/get"#) -}
+e129aa4036cdfae42610e7e47c58ad6d
   simpleGet :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
                 Lib.simpleGet1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-e41f21d45ffc0603c2140a02da768a50
+4dfcb4ad0fd1b61b382348f0edf87682
   simpleGet1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -158,7 +431,7 @@ e41f21d45ffc0603c2140a02da768a50
                         @ ()
                         @ (Network.HTTP.Client.Types.Response
                              Data.ByteString.Lazy.Internal.ByteString)
-                        (Network.HTTP.Client.Core.httpLbs3 Lib.simpleGet5 ipv1)
+                        (Network.HTTP.Client.Core.httpLbs3 Lib.receiveJson3 ipv1)
                           `cast`
                         (Sym (GHC.Types.NTCo:IO[0]
                                   <Network.HTTP.Client.Types.Response
@@ -193,7 +466,7 @@ e41f21d45ffc0603c2140a02da768a50
                         ipv2 of ds3 { (#,#) ipv4 ipv5 ->
                  case GHC.IO.Handle.Text.hPutStr2
                         GHC.IO.Handle.FD.stdout
-                        Lib.simpleGet4
+                        Lib.postRequest4
                         GHC.Types.True
                         ipv4 of ds4 { (#,#) ipv6 ipv7 ->
                  case GHC.IO.Handle.Text.hPutStr2
@@ -204,14 +477,14 @@ e41f21d45ffc0603c2140a02da768a50
                            Data.ByteString.Internal.$fShowByteString1
                            (Network.HTTP.Simple.$wgetResponseHeader
                               @ Data.ByteString.Lazy.Internal.ByteString
-                              Lib.simpleGet3
+                              Lib.simpleGet2
                               ww3)
                            (GHC.Types.[] @ GHC.Types.Char) })
                         GHC.Types.True
                         ipv6 of ds5 { (#,#) ipv8 ipv9 ->
                  case GHC.IO.Handle.Text.hPutStr2
                         GHC.IO.Handle.FD.stdout
-                        Lib.simpleGet2
+                        Lib.postRequest2
                         GHC.Types.True
                         ipv8 of ds6 { (#,#) ipv10 ipv11 ->
                  case Data.ByteString.Lazy.appendFile2
@@ -224,11 +497,8 @@ e41f21d45ffc0603c2140a02da768a50
                    GHC.IO.Handle.FD.stdout
                    Data.ByteString.Lazy.Char8.hPutStrLn2
                    ipv12 } } } } } } } }) -}
-833311be0e33b67dae1d26dea0fc65ef
-  simpleGet2 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "body: "#) -}
-43db4233d883368627a8d03a05b5b51f
-  simpleGet3 :: Network.HTTP.Types.Header.HeaderName
+4accd42f62d7391fd49472ee3ab5563b
+  simpleGet2 :: Network.HTTP.Types.Header.HeaderName
   {- Unfolding: (case GHC.Prim.newMutVar#
                         @ GHC.ForeignPtr.Finalizers
                         @ GHC.Prim.RealWorld
@@ -261,20 +531,6 @@ e41f21d45ffc0603c2140a02da768a50
                    @ Data.ByteString.Internal.ByteString
                    (Data.ByteString.Internal.PS addr# a1 0 ipv2)
                    dt1 } } }) -}
-718064d1b8d7cf6f5cbea2986ca3deda
-  simpleGet4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "header: "#) -}
-85642357e736ae9964d14b51743bb09d
-  simpleGet5 :: Network.HTTP.Client.Types.Request
-  {- Unfolding: (case Network.HTTP.Client.Request.$fIsStringRequest_$sparseUrlThrow
-                        Lib.simpleGet6 of wild {
-                   Data.Either.Left e
-                   -> Network.HTTP.Client.Request.$fIsStringRequest1 e
-                   Data.Either.Right r -> r }) -}
-2b6d35cade379f49c48655f1a38ed4f1
-  simpleGet6 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString#
-                   "http://httpbin.org/get"#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

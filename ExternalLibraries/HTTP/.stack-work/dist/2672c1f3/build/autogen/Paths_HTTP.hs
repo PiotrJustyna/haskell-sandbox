@@ -17,7 +17,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "C:\\Users\\Piotr\\Documents\\haskell-sandbox\\ExternalLibraries\\HTTP\\.stack-work\\install\\72e7e322\\bin"
-libdir     = "C:\\Users\\Piotr\\Documents\\haskell-sandbox\\ExternalLibraries\\HTTP\\.stack-work\\install\\72e7e322\\lib\\x86_64-windows-ghc-7.10.3\\HTTP-0.1.0.0-9NyspanZVc49OaRmXXSz67"
+libdir     = "C:\\Users\\Piotr\\Documents\\haskell-sandbox\\ExternalLibraries\\HTTP\\.stack-work\\install\\72e7e322\\lib\\x86_64-windows-ghc-7.10.3\\HTTP-0.1.0.0-JaPUpLeAyCAE1eMLwMeTAy"
 datadir    = "C:\\Users\\Piotr\\Documents\\haskell-sandbox\\ExternalLibraries\\HTTP\\.stack-work\\install\\72e7e322\\share\\x86_64-windows-ghc-7.10.3\\HTTP-0.1.0.0"
 libexecdir = "C:\\Users\\Piotr\\Documents\\haskell-sandbox\\ExternalLibraries\\HTTP\\.stack-work\\install\\72e7e322\\libexec"
 sysconfdir = "C:\\Users\\Piotr\\Documents\\haskell-sandbox\\ExternalLibraries\\HTTP\\.stack-work\\install\\72e7e322\\etc"

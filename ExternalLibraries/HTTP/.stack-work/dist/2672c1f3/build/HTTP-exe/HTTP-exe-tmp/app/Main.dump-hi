@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2016-08-01 20:33:39.0123925 UTC
+2016-08-02 21:09:25.9172464 UTC
 
 interface main@main:Main 7103
-  interface hash: 00972d54375756bf7d7c0211937ca09f
-  ABI hash: e4ac17976b8268cd002a9bd237fc2f62
-  export-list hash: e342aa60cdab758c0e36aab686cad2d3
+  interface hash: 1a33c87c965353ffe02e5069a85466ac
+  ABI hash: 3d996ed3311a559a85ce00f95dc97818
+  export-list hash: f16413ccdb2d1462d805374010563bca
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: b1990d3a539976da963d40e0c10ecfa3
   sig of: Nothing
@@ -14,7 +14,7 @@ interface main@main:Main 7103
 exports:
   Main.main
 module dependencies:
-package dependencies: HTTP-0.1.0.0@HTTP_9NyspanZVc49OaRmXXSz67
+package dependencies: HTTP-0.1.0.0@HTTP_JaPUpLeAyCAE1eMLwMeTAy
                       Win32-2.3.1.0@Win32_ELFLzTRksT8Dql3wobiWvb
                       aeson-0.11.2.0@aeson_LedJglFIdMA4kUkRtSt8iO
                       array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
@@ -39,6 +39,7 @@ package dependencies: HTTP-0.1.0.0@HTTP_9NyspanZVc49OaRmXXSz67
                       data-default-class-0.0.1@datad_K91y8NcZUJI9yaBI61rgdD
                       deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59
                       dlist-0.7.1.2@dlist_AO7XAasbAeyL0XLKeq1Aui
+                      enclosed-exceptions-1.0.2@enclo_Ds65i2w7C3698oLVfspeJr
                       exceptions-0.8.3@excep_BEih2K3eMGTE4cg5iulra8
                       fail-4.9.0.0@fail_2xB1AvdW34sDm9N3JOe33G ghc-prim-0.4.0.0
                       hashable-1.2.4.0@hasha_EalUWgp8NarBYWPbvYAD8I
@@ -75,6 +76,7 @@ package dependencies: HTTP-0.1.0.0@HTTP_9NyspanZVc49OaRmXXSz67
                       x509-system-1.6.3@x509s_59MddEOh5ZpLoYbedIxOsV
                       x509-store-1.6.1@x509s_GNxlcya66ls6UYCVFocOcd
                       x509-validation-1.6.3@x509v_7k61JS7ZMPn2UX1RCdkXnr
+                      yaml-0.8.18.1@yaml_EwEnZoOYNHvHFnvbxlVdKu
                       zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu
 orphans: aeson-0.11.2.0@aeson_LedJglFIdMA4kUkRtSt8iO:Data.Aeson.Types.Generic
          aeson-0.11.2.0@aeson_LedJglFIdMA4kUkRtSt8iO:Data.Aeson.Types.Instances
@@ -127,22 +129,22 @@ family instance modules: attoparsec-0.13.0.2@attop_F2JR8EcnzjH8eSBi5YocsE:Data.A
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed
                          vector-0.11.0.0@vecto_LmZ3LQW4ivu8MsQuVgukln:Data.Vector.Unboxed.Base
                          zlib-0.6.1.1@zlib_7LjT7TSHX8U3VTy3t378Vu:Codec.Compression.Zlib.Stream
-import  -/  HTTP-0.1.0.0@HTTP_9NyspanZVc49OaRmXXSz67:Lib cb7356293ba517e08bd2098660cfd180
+import  -/  HTTP-0.1.0.0@HTTP_JaPUpLeAyCAE1eMLwMeTAy:Lib febe56ef655380c6c896efb5f741e23e
 import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
 import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
-cb70834fa2e540857e20a958554d4806
+3c41a2b9242c82ca4d1b7281491a7c3f
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <L,U>,
      Unfolding: InlineRule (0, True, True)
-                Lib.simpleGet1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
-cf8db926aba97e4a5a2b14e2748f33c8
+                Lib.postRequest1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+fc1027389e5a0800a94b5c6702c241eb
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
-                   Lib.simpleGet1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+                   Lib.postRequest1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

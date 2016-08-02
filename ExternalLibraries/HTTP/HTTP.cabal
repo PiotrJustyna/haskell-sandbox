@@ -18,7 +18,9 @@ library
   exposed-modules:      Lib
   build-depends:        base >= 4.7 && < 5,
                         bytestring,
-                        http-conduit
+                        http-conduit,
+                        aeson,
+                        yaml
   default-language:     Haskell2010
 
 executable HTTP-exe
